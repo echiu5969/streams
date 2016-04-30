@@ -1,4 +1,4 @@
-// Global dependencies 
+// Global dependencies
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -8,21 +8,22 @@ var bodyParser = require('body-parser');
 var consolidate = require('consolidate');
 var nunjucks = require('nunjucks');
 
-// Local dependencies 
+// Local dependencies
 var router = require('./routes');
 
 // Create app instance
 var app = express();
 
 // view engine setup
-//Set the location of our views directory
+// Set the location of our views directory
 app.set('views', path.join(__dirname, 'views'));
-// Configure nunjucks engine so that is knows where our
-// views are located 
-consolidate.requires.nunjucks = nunjucks.configure('views');
+// Pass consolidate a reference to nunjucks so it knows
+// which engine to use
+nunjucks.configure('views');
+consolidate.requires.nunjucks = nunjucks;
 // Assign nunjucks engine for .html files
 app.engine('html', consolidate.nunjucks);
-// Set html as the default view engine 
+// Set html as the default view engine
 app.set('view engine', 'html');
 
 
