@@ -1,11 +1,30 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
+    <style>
+        .img-circle {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+    }
+  
+    .page-header {
+    text-align: center;
+    border-radius: 60px;
+    }
+    .lead {
+    text-align: left;
+    }
+    h2 {
+        font-weight: bold;
+    </style>
     <div class="page-header">
-        <h1>About</h1>
+        <h2>About</h2>
+        <img class="img-circle" src="https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/17101_1163970866970381_4457927643861609497_n.jpg?oh=79bfc53703c21804eec257689ceda412&oe=57A2155B">
         <p class="lead">My name is Edwin Chiu. I am a student at Brooklyn Technical High School.
         This application that I created at New York on Tech allows people to search up certain
         hashtags taken from Twitter and view all hashtags that was searched up. I hope that this will be of some use
         to people who are searching up certain topics on the internet and needs an easier way to find them.</p>
     </div>
+
 {% endblock %}
