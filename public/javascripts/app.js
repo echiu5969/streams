@@ -11,7 +11,15 @@ var initializeDates = function() {
   setInterval(initializeDates, 60000);
 };
 
+var initializeGrid = function() {
+  $('.tweets-container').masonry({
+  itemSelector: '.tweet-item-container'
+});
+  
+};
+
 $(document).ready(function() {
   initializeDates();
+  initializeGrid();
 });
 
